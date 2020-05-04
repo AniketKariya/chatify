@@ -1,0 +1,342 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: [start-first] 20% [first-second] 60% [second-third] 20% [third-end];
+    grid-template-rows: [top] 11fr [middle] 1fr [bottom];
+    grid-template-areas:
+        "nav-pane chat-pane user-pane"
+        "nav-pane message-pane message-pane";
+    width: 100vw;
+    height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.rooms {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #666a77;
+    padding-bottom: 8px;
+}
+
+.radio {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #666a77;
+    padding-bottom: 8px;
+}
+
+.video-conf {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #666a77;
+    padding-bottom: 8px;
+}
+
+.navigation {
+    background-color: #333744;
+    grid-area: nav-pane;
+    color: #fff;
+}
+
+.user-content {
+    margin: 8px;
+}
+
+.chat {
+    padding: 12px;
+    overflow-y: scroll;
+    grid-area: chat-pane;
+}
+
+.users {
+    background-color: #333744;
+    grid-area: user-pane;
+}
+
+.room-title {
+    font-family: Helvetica, Arial;
+    color: #fff;
+    padding: 8px;
+    margin: 8px;
+    border-bottom: 1px solid #666a77;
+}
+
+.compose {
+    background-color: #444855;
+    grid-area: message-pane;
+    padding: 8px;
+    align-self: center;
+}
+
+.profile {
+    background: radial-gradient(
+            circle at 88% 18%,
+            rgba(136, 136, 136, 0.05) 0%,
+            rgba(136, 136, 136, 0.05) 50%,
+            rgba(172, 172, 172, 0.05) 50%,
+            rgba(172, 172, 172, 0.05) 100%
+        ),
+        radial-gradient(
+            circle at 34% 9%,
+            rgba(149, 149, 149, 0.05) 0%,
+            rgba(149, 149, 149, 0.05) 50%,
+            rgba(55, 55, 55, 0.05) 50%,
+            rgba(55, 55, 55, 0.05) 100%
+        ),
+        radial-gradient(
+            circle at 37% 56%,
+            rgba(97, 97, 97, 0.05) 0%,
+            rgba(97, 97, 97, 0.05) 50%,
+            rgba(160, 160, 160, 0.05) 50%,
+            rgba(160, 160, 160, 0.05) 100%
+        ),
+        linear-gradient(69deg, rgb(10, 68, 151), rgb(72, 211, 165));
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.profile > .profile-pic > img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.profile-info {
+    margin: 8px;
+}
+
+.profile-email {
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ****************************************
+ *******       BUTTON STYLES      *********
+ ******************************************/
+
+button {
+    font-variant: small-caps;
+    text-align: left;
+    color: white;
+    transition: 0.3s;
+    border: none;
+    outline: none;
+}
+
+/* For Navigation Pane Buttons  */
+
+.btn-group > button {
+    display: block;
+    padding: 8px;
+    width: 90%;
+    margin: 6px auto;
+    background: #444855;
+}
+
+.users > button {
+    display: block;
+    padding: 8px;
+    width: 90%;
+    margin: 6px auto;
+    background: #444855;
+}
+
+.btn-group > button:hover {
+    background: linear-gradient(69deg, rgb(10, 68, 151), rgb(72, 211, 165));
+}
+
+.users > button:hover {
+    background-color: #666a77;
+}
+
+form {
+    display: inline;
+}
+
+/* For Message Pane Buttons  */
+.compose button {
+    padding: 12px;
+    margin: 6px;
+    background: #666a77;
+}
+
+.compose button:hover {
+    background: linear-gradient(69deg, rgb(10, 68, 151), rgb(72, 211, 165));
+}
+
+/* For list Buttons */
+.list > button {
+    display: block;
+    padding: 8px;
+    width: 100%;
+    margin: 0 auto;
+    background: #333744;
+}
+
+.list > button:hover {
+    background-color: #666a77;
+}
+
+.active {
+    background: linear-gradient(
+        69deg,
+        rgb(10, 68, 151),
+        rgb(72, 211, 165)
+    ) !important;
+}
+
+.critical{
+    width: 100%;
+    padding: 10px;
+    background-color: #444855;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.critical:hover {
+    background-color: tomato;
+}
+
+/* ****************************************
+ *******       INPUT STYLES      **********
+ ******************************************/
+
+#message-box {
+    width: 70%;
+    border: 1px solid #ddd;
+    outline: none;
+    padding: 12px;
+    font-size: medium;
+    background-color: #ddd;
+    transition: 0.3s;
+}
+
+#message-box:focus {
+    transition: 0.3s;
+    background: #fff;
+    box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+        inset 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+li {
+    padding-left: 12px;
+    padding-bottom: 8px;
+}
+
+/* ****************************************
+ *******       Radio Player      **********
+ ******************************************/
+
+#video {
+    display: none;
+}
+
+.message {
+    margin-bottom: 16px;
+}
+.message__name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 8px;
+}
+.message__meta {
+    color: #777;
+    font-size: 14px;
+}
+.message a {
+    color: #0070cc;
+}
+
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

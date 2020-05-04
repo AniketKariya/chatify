@@ -1,0 +1,149 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/context-menu.css">
+    <!-- <script src="https://kit.fontawesome.com/584d1c5319.js" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navigation pane  -->
+        <div class="navigation">
+            <!-- User Profile  -->
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="./sample.jpg" alt="something" />
+                </div>
+                <div class="profile-info">
+                    <div class="profile-name" id="username">{{user.name}}</div>
+                    <div class="profile-email" id="email">{{user.email}}</div>
+                </div>
+            </div>
+
+            <!-- Rooms, Radio and Conf Content -->
+            <div class="user-content">
+                <div class="rooms">
+                    <div class="title">Rooms</div>
+                    <div class="btn-group">
+                        <button id="create-room">create room</button>
+                        <button id="join-room">join room</button>
+                    </div>
+                    <div class="list">
+                        <button class="active">Global</button>
+                        <button disabled> TestRoom01 </button>
+                        <button disabled> TestRoom02 </button>
+                    </div>
+                </div>
+                <div class="radio">
+                    <div class="title">Radio</div>
+                    <div class="list">
+                        <button id="rad-1">Calm Radio</button>
+                        <button id="rad-2">Meethi Mirchi</button>
+                        <button id="rad-3">Radio Mirchi</button>
+                        <button id="rad-4">ESPN - Sports</button>
+                        <video autoplay name="media" id="video"></video>
+                    </div>
+                </div>
+                <div class="video-conf">
+                    <div class="title">Video Conference</div>
+                    <div class="btn-group">
+                        <button id="create-conf">
+                            create a conference
+                        </button>
+                        <button id="join-conf">join conference</button>
+                    </div>
+                </div>
+                <button class="critical" id="logout">Logout</button>
+                <button class="critical" id="delete-account">Delete Account</button>
+            </div>
+        </div>
+
+        <!-- Chat Window  -->
+        <div id="messages" class="chat">
+        </div>
+
+        <!-- Users Window  -->
+        <div class="users" id="sidebar"></div>
+
+        <!-- Composer Portion  -->
+        <div class="compose">
+            <form id="message-form">
+                <input type="text" id="message-box" placeholder="Message" name="message" required autocomplete="off" />
+                <button type="submit" id="send-message"> send </i>
+                </button>
+            </form>
+
+            <button id="send-location">send location</button>
+            <button id="speak">speak </i>
+            </button>
+        </div>
+    </div>
+
+    <!--  MESSAGE TEMPLATE  -->
+    <script id="message-template" type="test/html">
+            <div class="message">
+                <p>
+                    <span class="message__name">{{username}}</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <p> {{message}} </p>
+            </div>
+        </script>
+
+    <!-- LOCATION TEMPLATE -->
+    <script id="location-message-template" type="text/html">
+        <div class="message">
+            <p>
+                <span class="message__name">{{username}}</span>
+                <span class="message__meta">{{createdAt}}</span>
+            </p>
+            <p> <a href={{url}} target="blank">location</a> </p>
+        </div>
+    </script>
+
+    <!-- USERS TEMPLATE -->
+    <script id="sidebar-template" type="text/html">
+            <h2 class = "room-title">{{room}}</h2>
+            <div class="users">
+                {{#users}}  
+                    <button>{{username}}</button>
+                {{/users}}
+            </div>
+        </script>
+
+    <!-- CONTEXT MENU  -->
+    <nav id="context-menu" class="context-menu">
+        <ul class="context-menu__items">
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="Forward"> Forward </a>
+            </li>
+            <li c lass="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="Translate"> Translate </a>
+            </li>
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="Save"> Save </a>
+            </li>
+            <li class="context-menu__item">
+                <a href="#" class="context-menu__link" data-action="Delete"> Delete </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="snackbar">please wait...</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/radio.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/context-menu.js"></script>
+</body>
+
+</html>
