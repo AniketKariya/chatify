@@ -4,6 +4,7 @@
   </a>
 </p>
 <h3 align="center">Chatify</h3>
+
 ---
 
 #### Demo: [project-chatify](http://project-chatify.herokuapp.com/)
