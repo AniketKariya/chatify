@@ -1,10 +1,9 @@
 <p align="center">
   <a href="http://project-chatify.herokuapp.com/">
-    <img src="https://raw.githubusercontent.com/AniketKariya/chatify/master/public/Logo.png" alt="Chatify Logo" width="72" height="72">
+    <img src="https://raw.githubusercontent.com/AniketKariya/chatify/master/public/Logo.png" alt="Chatify Logo" width="72" height="81">
   </a>
-  Chatify
 </p>
-
+<h3 align="center">Bootstrap</h3>
 ---
 
 #### Demo: [project-chatify](http://project-chatify.herokuapp.com/)
