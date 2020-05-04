@@ -1,4 +1,4 @@
-![chatify](https://drive.google.com/file/d/1hMGrQgKZ-qf8oyjMvUs0_VtEyyYzIMc1/view?usp=sharing "Chatify Logo")
+![chatify](https://raw.githubusercontent.com/AniketKariya/chatify/master/public/Logo.png "Chatify Logo")
 #### Demo: [project-chatify](http://project-chatify.herokuapp.com/)
 ---
 #### NOTE:
