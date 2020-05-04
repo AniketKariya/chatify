@@ -3,7 +3,7 @@
     <img src="https://raw.githubusercontent.com/AniketKariya/chatify/master/public/Logo.png" alt="Chatify Logo" width="72" height="81">
   </a>
 </p>
-<h3 align="center">Bootstrap</h3>
+<h3 align="center">Chatify</h3>
 ---
 
 #### Demo: [project-chatify](http://project-chatify.herokuapp.com/)
