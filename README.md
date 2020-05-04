@@ -1,6 +1,14 @@
-![chatify](https://raw.githubusercontent.com/AniketKariya/chatify/master/public/Logo.png "Chatify Logo")
-#### Demo: [project-chatify](http://project-chatify.herokuapp.com/)
+<p align="center">
+  <a href="http://project-chatify.herokuapp.com/">
+    <img src="https://raw.githubusercontent.com/AniketKariya/chatify/master/public/Logo.png" alt="Chatify Logo" width="72" height="72">
+  </a>
+  Chatify
+</p>
+
 ---
+
+#### Demo: [project-chatify](http://project-chatify.herokuapp.com/)
+
 #### NOTE:
 >The demo might not run as expected, as SSL certificate is not supplied. Location and video conferencing might fail. Latest browsers block GPS, 
  Video and Audio sensors for privacy reasons. To fix this, go to ```chrome://flags/#unsafely-treat-insecure-origin-as-secure``` if you're using chrome, or go to ```edge://flags/#unsafely-treat-insecure-origin-as-secure``` in case of Edge Chromium; and add project-chatify.herokuapp.com in the textbox and restart the browser.
